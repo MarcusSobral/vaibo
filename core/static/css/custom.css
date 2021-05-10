@@ -1,0 +1,30 @@
+body,
+html {
+  font-family: "Roboto", sans-serif;
+}
+
+#header-wrap .container {
+  display: flex;
+}
+
+#header-wrap .container .navbar-brand {
+  flex: 0 10%;
+}
+
+#header-wrap .container .navbar {
+  flex-grow: 1;
+}
+
+#header-wrap .container .search-box {
+  display: flex;
+  flex: 1 1 auto;
+  justify-content: space-between;
+}
+
+#header-wrap .container .search-box .barra-busca {
+  flex: 1 1 auto;
+}
+
+#navbarNav {
+  flex: 0 1 10%;
+}

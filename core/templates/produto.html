@@ -1,0 +1,50 @@
+{% load static %}
+<section id="produtos">
+  <div class="row">
+    <div class="col-3"></div>
+    <div class="col-9">
+      <section id="prod" class="block d-inline-flex">
+        <article class="item">
+          <img src={% static 'img/iphone.svg' %} class="img-fluid" />
+        </article>
+        <article class="item">
+          <div class="atributo">
+            <div class="descricao">
+              <p><span class="nome">Nome do Produto</span></p>
+              <p class="versao">Versão do produto</p>
+              <ul>
+                <li>Tela - Atributo</li>
+                <li>Bateria - Atributo</li>
+                <li>Memória Interna - Atributo</li>
+                <li>Camera - Atributo</li>
+                <li>Performance - Atributo</li>
+              </ul>
+            </div>
+            <div class="avaliacao">
+              <div class="nota">
+                <div class="item">
+                  <img src={% static 'img/5-star.svg' %} class="img-fluid" />
+                  <p>Consumidores</p>
+                </div>
+                <div class="item">
+                  <img src={% static 'img/5-star.svg' %} class="img-fluid" />
+                  <p>Especialistas</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="item">
+          <div class="score">
+            <div class="nome">
+              <p>score</p>
+            </div>
+            <div class="nota">
+              <p>4.5</p>
+            </div>
+          </div>
+        </article>
+      </section>
+    </div>
+  </div>
+</section>
