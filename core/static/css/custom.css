@@ -28,3 +28,11 @@ html {
 #navbarNav {
   flex: 0 1 10%;
 }
+
+#produtos .row .produto-lista .produto-card-content {
+  position: relative;
+}
+
+.produto-card {
+  display: flex;
+}
