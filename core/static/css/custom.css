@@ -29,10 +29,49 @@ html {
   flex: 0 1 10%;
 }
 
+#produtos {
+  position: relative;
+}
+
 #produtos .row .produto-lista .produto-card-content {
   position: relative;
 }
 
-.produto-card {
+#produtos .produto-card {
   display: flex;
+  font-size: 15px;
+}
+
+#produtos .produto-card .item-produto:nth-child(1) {
+  flex: 1 1 300px;
+  align-self: center;
+}
+
+#produtos .produto-card .item-produto p {
+  margin-bottom: 0px;
+}
+
+#produtos .produto-card .item-produto:nth-child(2) {
+  flex: 1 1 auto;
+}
+
+#produtos .produto-card .item-produto:nth-child(3) {
+  flex: 1 1 25%;
+}
+
+#produtos .produto-card .atributo .descricao {
+  color: var(--dark);
+}
+
+#produtos .produto-card .atributo .descricao p span {
+  font-size: 25px;
+  font-weight: 700;
+}
+
+#produtos .produto-card .avaliacao {
+  display: flex;
+}
+
+#produtos .produto-card .avaliacao .item-avaliacao img {
+  max-width: 100px;
 }
