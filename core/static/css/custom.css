@@ -29,7 +29,7 @@ html {
 #header-wrap .search-box {
   border: solid 2px var(--medium);
   border-radius: 30px;
-  margin-top: 5px;
+  margin: 5px 10px;
 }
 
 #header-wrap .search-box .btn-group button {
@@ -40,6 +40,11 @@ html {
 #header-wrap .barra-busca .btn.btn-search {
   background-color: white;
   border-radius: 25px;
+}
+
+#header-wrap .barra-busca .btn.btn-search img {
+  height: 30px;
+  width: 30px;
 }
 
 #header-wrap .barra-busca .input-group input {
@@ -60,6 +65,8 @@ html {
 }
 
 #produtos .row .produto-lista .produto-card-content {
+  display: flex;
+  flex-wrap: wrap;
   position: relative;
 }
 
