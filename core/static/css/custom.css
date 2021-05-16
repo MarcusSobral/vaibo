@@ -3,6 +3,7 @@ html {
   font-family: "Roboto", sans-serif;
 }
 
+/* HEADER */
 #header-wrap .container {
   display: flex;
 }
@@ -25,9 +26,34 @@ html {
   flex: 1 1 auto;
 }
 
+#header-wrap .search-box {
+  border: solid 2px var(--medium);
+  border-radius: 30px;
+  margin-top: 5px;
+}
+
+#header-wrap .search-box .btn-group button {
+  background-color: white;
+  border-radius: 25px;
+}
+
+#header-wrap .barra-busca .btn.btn-search {
+  background-color: white;
+  border-radius: 25px;
+}
+
+#header-wrap .barra-busca .input-group input {
+  border: none;
+  background-color: white;
+}
+
 #navbarNav {
   flex: 0 1 10%;
 }
+
+/* END OF HEADER */
+
+/* PRODUTO */
 
 #produtos {
   position: relative;
@@ -39,16 +65,17 @@ html {
 
 #produtos .produto-card {
   display: flex;
+  flex-direction: row;
+  /* flex-wrap: wrap; */
   font-size: 15px;
+  border: solid 2px var(--light);
+  border-radius: 8px;
 }
 
 #produtos .produto-card .item-produto:nth-child(1) {
-  flex: 1 1 300px;
+  flex: 1 1 350px;
   align-self: center;
-}
-
-#produtos .produto-card .item-produto p {
-  margin-bottom: 0px;
+  min-width: 200px;
 }
 
 #produtos .produto-card .item-produto:nth-child(2) {
@@ -56,7 +83,22 @@ html {
 }
 
 #produtos .produto-card .item-produto:nth-child(3) {
-  flex: 1 1 25%;
+  flex: 1 1 250px;
+  align-self: center;
+  min-width: 150px;
+}
+
+#produtos .produto-card .item-produto {
+  padding: 10px;
+}
+
+#produtos .produto-card .item-produto p {
+  margin-bottom: 5px;
+}
+
+#produtos .produto-card .atributo {
+  display: flex;
+  flex-direction: column;
 }
 
 #produtos .produto-card .atributo .descricao {
@@ -64,14 +106,54 @@ html {
 }
 
 #produtos .produto-card .atributo .descricao p span {
+  color: var(--primary-dark);
   font-size: 25px;
   font-weight: 700;
 }
 
+.atributo .descricao .grafico-content .item-grafico {
+  text-transform: uppercase;
+  height: 20px;
+  margin-bottom: 5px;
+}
+
 #produtos .produto-card .avaliacao {
   display: flex;
+  justify-content: space-around;
 }
 
 #produtos .produto-card .avaliacao .item-avaliacao img {
   max-width: 100px;
 }
+
+#produtos .produto-card .item-produto .score-content {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  color: white;
+  background: green;
+  border: solid 2px green;
+  border-radius: 8px;
+  text-align: center;
+}
+
+#produtos .produto-card .item-produto .score-content .nome {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+#produtos .produto-card .item-produto .score-content .nota {
+  font-size: 50px;
+  font-weight: 700;
+}
+
+#produtos .sidebar-content {
+  display: flex;
+  border-radius: 8px;
+  background: var(--light);
+}
+
+#produtos .sidebar {
+  padding: 10px;
+}
+/* END OF PRODUTO */
