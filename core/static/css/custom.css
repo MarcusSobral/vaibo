@@ -155,12 +155,17 @@ html {
 }
 
 #produtos .sidebar-content {
-  display: flex;
+  /* display: flex; */
   border-radius: 8px;
   background: var(--light);
 }
 
 #produtos .sidebar {
+  display: flex;
   padding: 10px;
+}
+
+#produtos .sidebar .range-content {
+  display: flex;
 }
 /* END OF PRODUTO */
