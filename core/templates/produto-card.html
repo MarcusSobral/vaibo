@@ -1,6 +1,7 @@
 {% load static %}
 <div class="produto-card-content">
-  <div class="produto-card">
+  {% for s in smartphones %}
+  <div class="produto-card block">
     <div class="item-produto">
       <a href="#">
         <img src="{% static 'img/iphone.svg' %}" class="img-fluid" />
@@ -9,10 +10,7 @@
     <div class="item-produto">
       <div class="atributo">
         <div class="descricao">
-          <p>
-            <span class="nome">iPhone 12 Pro Max</span><br />Grafite, com Tela
-            de 6,7", 5G, 512 GB e Câmera Tripla de 12MP - MGDG3BZ/A
-          </p>
+          <p><span class="nome">{{ s.name }}</span><br />{{ s.description }}</p>
           <div class="grafico-content">
             <div class="item-grafico progress">
               <div
@@ -103,4 +101,5 @@
       </div>
     </div>
   </div>
+  {% endfor %}
 </div>
