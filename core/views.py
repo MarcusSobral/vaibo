@@ -1,15 +1,31 @@
 from django.views.generic import TemplateView
+from django.views.generic.list import ListView
+
+# from django.core.paginator import Paginator
 
 from .models import Produtos
 
 
 class IndexView(TemplateView):
     template_name = 'index.html'
+    paginate_by = 10
 
     def get_context_data(self, **kwargs):
         context = super(IndexView, self).get_context_data(**kwargs)
         context['produtos'] = Produtos.objects.all()
         return context
+
+class ProdutosList(ListView):
+    model = Produtos
+    template_name = "produto-card2.html"
+    paginate_by = 10
+
+    # def get_context_data(self, **kwargs):
+    #     context = super(IndexView, self).get_context_data(**kwargs)
+    #     context['produtos'] = Produtos.objects.all()
+    #     paginator = Paginator(context['produtos'], 10)
+    #     page = paginator.get_page(1)
+    #     return context
 
 # from .models import Smartphone
 

@@ -138,6 +138,17 @@ html {
   /* margin-left: 10px; */
 }
 
+.atributo .descricao .grafico-content .nota-grafico {
+  font-size: 10px;
+  background: var(--light);
+  text-transform: uppercase;
+  height: 10px;
+  border-radius: 5px;
+  margin-bottom: 2px;
+  /* border: 1px solid var(--primary-dark); */
+  /* margin-left: 10px; */
+}
+
 #produtos
   .produto-card
   .atributo
@@ -150,6 +161,7 @@ html {
   align-items: flex-end;
   margin-left: 5px;
 }
+
 #produtos
   .produto-card
   .atributo
@@ -174,16 +186,56 @@ html {
   .item-nome
   p {
   font-size: 12px;
-  /* font-style: italic; */
-  color: var(--dark);
+  font-style: italic;
+  color: var(--medium);
   margin-bottom: 0;
   margin-left: 10px;
+  flex-wrap: nowrap;
+}
+
+#produtos
+  .produto-card
+  .atributo
+  .descricao
+  .grafico-content
+  .bar-content
+  .nota-nome
+  span {
+  color: goldenrod;
+  font-size: 14px;
+  font-weight: 700;
+  font-style: normal;
+  text-transform: uppercase;
+}
+
+#produtos
+  .produto-card
+  .atributo
+  .descricao
+  .grafico-content
+  .bar-content
+  .nota-nome
+  p {
+  font-size: 12px;
+  font-style: italic;
+  color: #ffda00;
+  margin-bottom: 0;
+  margin-left: 10px;
+  flex-wrap: nowrap;
 }
 
 .atributo .descricao .grafico-content .item-grafico .progress-bar {
   color: var(--primary);
   font-size: 5px;
   background-color: var(--primary-dark);
+  border-radius: 5px;
+  height: 10px;
+}
+
+.atributo .descricao .grafico-content .nota-grafico .progress-bar {
+  color: var(--primary);
+  font-size: 5px;
+  background-color: #ffda00;
   border-radius: 5px;
   height: 10px;
 }
@@ -202,20 +254,28 @@ html {
   justify-content: center;
   padding: 10px;
   color: white;
-  background: green;
-  border: solid 2px green;
+  /* background: green; */
+  /* border: solid 2px green; */
   border-radius: 8px;
   text-align: center;
 }
 
 #produtos .produto-card .item-produto .score-content .nome {
-  font-size: 20px;
+  color: var(--primary-dark);
+  font-size: 25px;
   font-weight: 700;
 }
 
 #produtos .produto-card .item-produto .score-content .nota {
-  font-size: 50px;
-  font-weight: 700;
+  color: green;
+  font-size: 85px;
+  font-weight: 900;
+}
+
+#produtos .produto-card .item-produto .score-content .nota p {
+  color: green;
+  font-size: 25px;
+  font-weight: 900;
 }
 
 #produtos .sidebar-content {
