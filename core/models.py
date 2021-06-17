@@ -127,6 +127,8 @@ class Produtos(Base):
     battery_score = models.CharField('Battery_score', max_length=10, null=True)
     camera_score = models.CharField('Camera_score', max_length=10, null=True)
     performance_score = models.CharField('Performance_score', max_length=10, null=True)
+    client_score = models.CharField('Cliente_score', max_length=10, null=True)
+    expert_score = models.CharField('Expert_score', max_length=10, null=True)
     vaibo_score = models.DecimalField('Vaibo Score', decimal_places=1, max_digits=2, null=True)
     rank = models.IntegerField('Ranking', null=True)
 

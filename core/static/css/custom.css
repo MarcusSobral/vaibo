@@ -264,19 +264,19 @@ html {
 }
 
 #produtos .produto-card .item-produto .score-content .nome {
-  color: var(--primary-dark);
+  /* color: var(--olive-dark); */
   font-size: 25px;
   font-weight: 700;
 }
 
 #produtos .produto-card .item-produto .score-content .nota {
-  color: var(--olive-light);
+  color: olive;
   font-size: 85px;
   font-weight: 900;
 }
 
 #produtos .produto-card .item-produto .score-content .nota p {
-  color: var(--olive-dark);
+  /* color: var(--olive-dark); */
   font-size: 25px;
   font-weight: 900;
 }
