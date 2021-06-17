@@ -79,6 +79,14 @@ html {
   border: solid 2px var(--light);
   border-radius: 8px;
   margin-bottom: 30px;
+  justify-content: center;
+  transition: all ease-out 0.2s;
+  /* box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175); */
+}
+
+#produtos .produto-card:hover {
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.12);
+  transform: scale(1.05);
 }
 
 #produtos .produto-card .item-produto:nth-child(1) {
@@ -119,8 +127,8 @@ html {
 
 #produtos .produto-card .atributo .descricao p span {
   color: var(--primary-dark);
-  font-size: 25px;
-  font-weight: 700;
+  font-size: 30px;
+  font-weight: 400;
 }
 
 /* .atributo .descricao .grafico-content {
@@ -270,7 +278,7 @@ html {
 }
 
 #produtos .produto-card .item-produto .score-content .nota {
-  color: olive;
+  color: green;
   font-size: 85px;
   font-weight: 900;
 }
