@@ -93,7 +93,7 @@
                 <div class="grafico-content">
                   <div class="bar-content">
                     <div class="item-nome">
-                      <span>Tela</span>
+                      <span>Tela {{ p.display_score }}</span>
                       <p>{{ p.display_type }}</p>
                     </div>
                     <div class="item-grafico">
@@ -108,7 +108,7 @@
                   </div>
                   <div class="bar-content">
                     <div class="item-nome">
-                      <span>Bateria</span>
+                      <span>Bateria {{ p.battery_score }}</span>
                       <p>{{ p.battery_type }}</p>
                     </div>
                     <div class="item-grafico">
@@ -123,7 +123,7 @@
                   </div>
                   <div class="bar-content">
                     <div class="item-nome">
-                      <span>Câmera</span>
+                      <span>Câmera {{ p.camera_score }}</span>
                       <p>{{ p.main_camera_features }}</p>
                     </div>
                     <div class="item-grafico">
@@ -138,7 +138,7 @@
                   </div>
                   <div class="bar-content">
                     <div class="item-nome">
-                      <span>Performance</span>
+                      <span>Performance {{ p.performance_score }}</span>
                       <p>{{ p.platform_chipset }}</p>
                     </div>
                     <div class="item-grafico">
@@ -153,7 +153,7 @@
                   </div>
                   <div class="bar-content">
                     <div class="nota-nome">
-                      <span>Nota Clientes</span>
+                      <span>Nota Clientes {{ p.client_score }}</span>
                       <p></p>
                     </div>
                     <div class="nota-grafico">
@@ -168,7 +168,7 @@
                   </div>
                   <div class="bar-content">
                     <div class="nota-nome">
-                      <span>Nota Especialistas</span>
+                      <span>Nota Especialistas {{ p.expert_score }}</span>
                       <p></p>
                     </div>
                     <div class="nota-grafico">

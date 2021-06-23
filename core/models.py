@@ -140,7 +140,7 @@ class Produtos(Base):
 
 class ProdutosAtt(Base):
     identification_id = models.CharField("ID", max_length=255)
-    name = models.CharField('Nome', max_length=10)
+    name = models.CharField('Nome', max_length=255)
     attscore = models.IntegerField('Att Score', null = True)
     attscore_percent = models.CharField('Att Score(%)', max_length=10, null = True)
     performance = models.IntegerField('Performance', null = True)
