@@ -58,6 +58,11 @@ html {
 
 /* END OF HEADER */
 
+#main .container-fluid {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
 /* PRODUTO */
 
 #produtos {
@@ -76,12 +81,12 @@ html {
   flex: 1 1 auto;
   flex-wrap: wrap;
   font-size: 15px;
-  border: solid 2px var(--light);
+  /* border: solid 2px var(--light); */
   border-radius: 8px;
   margin-bottom: 30px;
   justify-content: center;
   transition: all ease-out 0.2s;
-  /* box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175); */
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.12);
 }
 
 #produtos .produto-card:hover {
@@ -176,11 +181,24 @@ html {
   .descricao
   .grafico-content
   .bar-content
+  .nota-nome {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  margin-left: 5px;
+}
+
+#produtos
+  .produto-card
+  .atributo
+  .descricao
+  .grafico-content
+  .bar-content
   .item-nome
   span {
   color: var(--primary-dark);
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 600;
   font-style: normal;
   text-transform: uppercase;
 }
@@ -212,7 +230,7 @@ html {
   color: var(--secondary);
   /* color: goldenrod; */
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 600;
   font-style: normal;
   text-transform: uppercase;
 }
@@ -280,13 +298,13 @@ html {
 #produtos .produto-card .item-produto .score-content .nota {
   color: green;
   font-size: 85px;
-  font-weight: 900;
+  font-weight: 400;
 }
 
 #produtos .produto-card .item-produto .score-content .nota p {
   /* color: var(--olive-dark); */
   font-size: 25px;
-  font-weight: 900;
+  font-weight: 400;
 }
 
 #produtos .sidebar-content {
@@ -298,7 +316,7 @@ html {
 #produtos .sidebar {
   display: flex;
   flex-direction: column;
-  flex: 1 1 auto;
+  flex: 1 0 auto;
   padding: 10px;
 }
 
@@ -309,6 +327,7 @@ html {
 }
 #produtos .sidebar .range-content {
   display: flex;
+  flex-direction: column;
 }
 
 #produtos .sidebar .range-content .range-item {
@@ -317,3 +336,12 @@ html {
   margin-bottom: 15px;
 }
 /* END OF PRODUTO */
+
+/* PAGINAÇÃO */
+
+#pages .pagination {
+  justify-content: flex-end;
+  margin-bottom: 2rem;
+}
+
+/* END OF PAGINAÇÃO */

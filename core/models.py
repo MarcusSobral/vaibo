@@ -131,10 +131,34 @@ class Produtos(Base):
     expert_score = models.CharField('Expert_score', max_length=10, null=True)
     vaibo_score = models.DecimalField('Vaibo Score', decimal_places=1, max_digits=2, null=True)
     rank = models.IntegerField('Ranking', null=True)
-
     class Meta:
         verbose_name = 'Produto'
         verbose_name_plural = 'Produtos'
+
+    def __str__(self, null=True):
+        return self.name
+
+class ProdutosAtt(Base):
+    identification_id = models.CharField("ID", max_length=255)
+    name = models.CharField('Nome', max_length=10)
+    attscore = models.IntegerField('Att Score', null = True)
+    attscore_percent = models.CharField('Att Score(%)', max_length=10, null = True)
+    performance = models.IntegerField('Performance', null = True)
+    camera = models.IntegerField('Câmera', null = True)
+    screen = models.IntegerField('Tela', null = True)
+    design = models.IntegerField('Design', null = True)
+    price = models.IntegerField('Preço', null = True)
+    battery = models.IntegerField('Battery', null = True)
+    reliability = models.IntegerField('Confiabilidade', null = True)
+    durability = models.IntegerField('Durabilidade', null = True)
+    portability = models.IntegerField('Portabilidade', null = True)
+    usability = models.IntegerField('Usabilidade', null = True)
+    size = models.IntegerField('Tamanho', null=True)
+    sound = models.IntegerField('Som', null=True)
+
+    class Meta:
+        verbose_name = "ProdutoAtt"
+        verbose_name_plural = "ProdutosAtt"
 
     def __str__(self, null=True):
         return self.name
