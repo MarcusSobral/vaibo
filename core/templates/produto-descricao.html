@@ -1,0 +1,24 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+<div class="container bg-light">
+  <h3>Nome do Celular</h3>
+  <div class="area-descricao">
+    <div class="area-caracteristicas">
+      <div class="imagem">
+        <img src="../static/img/phone_ico2.jpg" alt="imagem" />
+      </div>
+      <div class="area-dados">
+        <ul>
+          <li>Tela</li>
+          <li>Bateria</li>
+          <li>Câmera</li>
+          <li>Performance</li>
+          <li>Clientes</li>
+        </ul>
+      </div>
+    </div>
+    <div class="area-depoimento">{% include 'depoimento.html' %}</div>
+  </div>
+</div>
+
+{% endblock %}

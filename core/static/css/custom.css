@@ -345,3 +345,11 @@ html {
 }
 
 /* END OF PAGINAÇÃO */
+
+/* DESCRIÇÃO */
+
+.area-caracteristicas {
+  display: flex;
+}
+
+/* END OF DESCRIÇÃO */

@@ -19,6 +19,12 @@ class ProdutosList(ListView):
     model = Produtos
     template_name = "produto-card2.html"
     paginate_by = 30
+
+
+class ProdutoDescricao(TemplateView):
+    template_name = 'produto-descricao.html'
+
+
     # def get_context_data(self, **kwargs):
     #     context = super(IndexView, self).get_context_data(**kwargs)
     #     context['produtos'] = Produtos.objects.all()
