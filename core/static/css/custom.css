@@ -58,6 +58,11 @@ html {
 
 /* END OF HEADER */
 
+#main .container-fluid {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
 /* PRODUTO */
 
 #produtos {
@@ -76,9 +81,17 @@ html {
   flex: 1 1 auto;
   flex-wrap: wrap;
   font-size: 15px;
-  border: solid 2px var(--light);
+  /* border: solid 2px var(--light); */
   border-radius: 8px;
   margin-bottom: 30px;
+  justify-content: center;
+  transition: all ease-out 0.2s;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.12);
+}
+
+#produtos .produto-card:hover {
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.12);
+  transform: scale(1.05);
 }
 
 #produtos .produto-card .item-produto:nth-child(1) {
@@ -119,8 +132,8 @@ html {
 
 #produtos .produto-card .atributo .descricao p span {
   color: var(--primary-dark);
-  font-size: 25px;
-  font-weight: 700;
+  font-size: 30px;
+  font-weight: 400;
 }
 
 /* .atributo .descricao .grafico-content {
@@ -128,6 +141,17 @@ html {
 } */
 
 .atributo .descricao .grafico-content .item-grafico {
+  font-size: 10px;
+  background: var(--light);
+  text-transform: uppercase;
+  height: 10px;
+  border-radius: 5px;
+  margin-bottom: 2px;
+  /* border: 1px solid var(--primary-dark); */
+  /* margin-left: 10px; */
+}
+
+.atributo .descricao .grafico-content .nota-grafico {
   font-size: 10px;
   background: var(--light);
   text-transform: uppercase;
@@ -150,6 +174,20 @@ html {
   align-items: flex-end;
   margin-left: 5px;
 }
+
+#produtos
+  .produto-card
+  .atributo
+  .descricao
+  .grafico-content
+  .bar-content
+  .nota-nome {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  margin-left: 5px;
+}
+
 #produtos
   .produto-card
   .atributo
@@ -160,7 +198,7 @@ html {
   span {
   color: var(--primary-dark);
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 600;
   font-style: normal;
   text-transform: uppercase;
 }
@@ -174,16 +212,59 @@ html {
   .item-nome
   p {
   font-size: 12px;
-  /* font-style: italic; */
-  color: var(--dark);
+  font-style: italic;
+  color: var(--medium);
   margin-bottom: 0;
   margin-left: 10px;
+  flex-wrap: nowrap;
+}
+
+#produtos
+  .produto-card
+  .atributo
+  .descricao
+  .grafico-content
+  .bar-content
+  .nota-nome
+  span {
+  color: var(--secondary);
+  /* color: goldenrod; */
+  font-size: 14px;
+  font-weight: 600;
+  font-style: normal;
+  text-transform: uppercase;
+}
+
+#produtos
+  .produto-card
+  .atributo
+  .descricao
+  .grafico-content
+  .bar-content
+  .nota-nome
+  p {
+  font-size: 12px;
+  font-style: italic;
+  color: var(--secondary);
+  /* color: #ffda00; */
+  margin-bottom: 0;
+  margin-left: 10px;
+  flex-wrap: nowrap;
 }
 
 .atributo .descricao .grafico-content .item-grafico .progress-bar {
   color: var(--primary);
   font-size: 5px;
   background-color: var(--primary-dark);
+  border-radius: 5px;
+  height: 10px;
+}
+
+.atributo .descricao .grafico-content .nota-grafico .progress-bar {
+  color: var(--primary);
+  font-size: 5px;
+  background-color: var(--secondary);
+  /* background-color: #ffda00; */
   border-radius: 5px;
   height: 10px;
 }
@@ -202,20 +283,28 @@ html {
   justify-content: center;
   padding: 10px;
   color: white;
-  background: green;
-  border: solid 2px green;
+  /* background: green; */
+  /* border: solid 2px green; */
   border-radius: 8px;
   text-align: center;
 }
 
 #produtos .produto-card .item-produto .score-content .nome {
-  font-size: 20px;
+  /* color: var(--olive-dark); */
+  font-size: 25px;
   font-weight: 700;
 }
 
 #produtos .produto-card .item-produto .score-content .nota {
-  font-size: 50px;
-  font-weight: 700;
+  color: green;
+  font-size: 85px;
+  font-weight: 400;
+}
+
+#produtos .produto-card .item-produto .score-content .nota p {
+  /* color: var(--olive-dark); */
+  font-size: 25px;
+  font-weight: 400;
 }
 
 #produtos .sidebar-content {
@@ -227,7 +316,7 @@ html {
 #produtos .sidebar {
   display: flex;
   flex-direction: column;
-  flex: 1 1 auto;
+  flex: 1 0 auto;
   padding: 10px;
 }
 
@@ -238,6 +327,7 @@ html {
 }
 #produtos .sidebar .range-content {
   display: flex;
+  flex-direction: column;
 }
 
 #produtos .sidebar .range-content .range-item {
@@ -246,3 +336,145 @@ html {
   margin-bottom: 15px;
 }
 /* END OF PRODUTO */
+
+/* PAGINAÇÃO */
+
+#pages .pagination {
+  justify-content: flex-end;
+  margin-bottom: 2rem;
+}
+
+/* END OF PAGINAÇÃO */
+
+/* DESCRIÇÃO */
+
+/* .area-descricao {
+} */
+
+.area-caracteristicas {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  flex-shrink: 1;
+  justify-content: space-around;
+}
+
+.area-caracteristicas img {
+  display: flex;
+  flex: 1 1 250px;
+  max-width: 500px;
+}
+
+.area-dados {
+  display: flex;
+  padding: 10px;
+  border-radius: 15px;
+}
+
+.area-dados .name {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5px;
+}
+
+.area-dados .info {
+  display: flex;
+  align-items: center;
+}
+
+.area-dados .progress-bar {
+  font-size: 14px;
+  font-weight: 500;
+  text-align: initial;
+  background: var(--secondary);
+  text-transform: uppercase;
+  height: 16px;
+  border-radius: 8px;
+  margin-bottom: 5px;
+  /* border: 1px solid var(--primary-dark); */
+}
+
+.area-dados .progress-bar p {
+  align-items: stretch;
+  color: whitesmoke;
+  font-size: 13px;
+  font-weight: 500;
+  /* margin-left: 15px; */
+  padding: auto;
+  margin-top: 2px;
+}
+
+.area-dados .bar-container {
+  background-color: var(--medium);
+  /* border: 2px solid var(--medium); */
+  height: 16px;
+  border-radius: 8px;
+  margin-left: 1px;
+  margin-bottom: 5px;
+}
+
+.area-dados .cam-container {
+  display: flex;
+}
+
+.area-dados .cam-container .cam-item {
+  flex-grow: 1;
+}
+
+.area-dados .item {
+  display: flex;
+  flex-direction: column;
+}
+
+.area-dados .features {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2px;
+  margin: 0 10px 2px 10px;
+}
+
+.area-dados p {
+  color: var(--primary);
+  font-size: 12px;
+  margin-left: 5px;
+  margin-bottom: 0;
+}
+
+.area-dados i {
+  color: var(--primary);
+  font-size: 22px;
+  margin-left: 0;
+  flex: 0 1 15px;
+}
+/* END OF DESCRIÇÃO */
+
+/* TESTE */
+.item1 {
+  grid-area: area1;
+}
+
+.item4 {
+  height: 50px;
+}
+
+.item5 {
+  grid-area: area5;
+}
+
+.grid-container {
+  display: flex;
+  justify-content: space-around;
+  /* grid-template-areas:
+    "area1 . ."
+    "area1 area4 area5"
+    "area1 . area5"
+    ". . area5"; */
+  /* grid-gap: 2px; */
+}
+
+.grid-container > div {
+  background-color: var(--medium);
+  text-align: center;
+  padding: 40px;
+}
+
+/* END OF TESTE */

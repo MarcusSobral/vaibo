@@ -4,16 +4,17 @@
   <div class="produto-card block">
     <div class="item-produto">
       <a href="#">
+        <img src="static/img/phone_ico2.jpg" class="img-fluid" alt="Imagem" />
+        {% comment %}
         <img src="{{ p.image.thumb.url }}" class="img-fluid" alt="Imagem" />
+        {% endcomment %}
       </a>
     </div>
     <div class="item-produto">
       <div class="atributo">
         <div class="descricao">
-          <p>
-            <span class="nome">{{ p.identification_name }}</span><br />{{
-            p.identification_versions }}
-          </p>
+          <p><span class="nome">{{ p.identification_name }}</span><br /></p>
+          <!--<p>{{ p.memory_internal }}</p>-->
           <div class="grafico-content">
             <div class="bar-content">
               <div class="item-nome">
@@ -33,7 +34,7 @@
             <div class="bar-content">
               <div class="item-nome">
                 <span>Bateria</span>
-                <p>5000 mah - ~80hs de música</p>
+                <p>{{ p.battery_type }}</p>
               </div>
               <div class="item-grafico">
                 <div
@@ -48,7 +49,7 @@
             <div class="bar-content">
               <div class="item-nome">
                 <span>Câmera</span>
-                <p>12 megapixel - HDR</p>
+                <p>{{ p.main_camera_features }}</p>
               </div>
               <div class="item-grafico">
                 <div
@@ -63,7 +64,7 @@
             <div class="bar-content">
               <div class="item-nome">
                 <span>Performance</span>
-                <p>Snapdragon 865 - 6MB RAM</p>
+                <p>{{ p.platform_chipset }}</p>
               </div>
               <div class="item-grafico">
                 <div
@@ -75,8 +76,39 @@
                 ></div>
               </div>
             </div>
+            <div class="bar-content">
+              <div class="nota-nome">
+                <span>Nota Clientes</span>
+                <p></p>
+              </div>
+              <div class="nota-grafico">
+                <div
+                  class="progress-bar"
+                  style="width: {{ p.camera_score }}"
+                  aria-valuenow="60"
+                  aria-valuemin="0"
+                  aria-valuemax="60"
+                ></div>
+              </div>
+            </div>
+            <div class="bar-content">
+              <div class="nota-nome">
+                <span>Nota Especialistas</span>
+                <p></p>
+              </div>
+              <div class="nota-grafico">
+                <div
+                  class="progress-bar"
+                  style="width: {{ p.performance_score }}"
+                  aria-valuenow="60"
+                  aria-valuemin="0"
+                  aria-valuemax="60"
+                ></div>
+              </div>
+            </div>
           </div>
         </div>
+        {% comment %}
         <div class="avaliacao-content">
           <div class="avaliacao">
             <div class="item-avaliacao">
@@ -89,16 +121,20 @@
             </div>
           </div>
         </div>
+        {% endcomment %}
       </div>
     </div>
     <div class="item-produto">
       <div class="score-content">
         <div class="score">
           <div class="nome">
+            {% comment %}
             <p>vaibo score</p>
+            {% endcomment %}
           </div>
           <div class="nota">
-            <p>{{ p.vaibo_score }}</p>
+            <span>{{ p.vaibo_score }}</span>
+            <p>vaibo score</p>
           </div>
         </div>
       </div>

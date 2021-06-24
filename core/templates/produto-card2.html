@@ -1,0 +1,285 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<div id="produtos">
+  <div class="row block">
+    <div class="col-3">
+      <!--SIDEBAR-->
+      {% include 'sidebar.html' %}
+      <!--//SIDEBAR-->
+    </div>
+    <div class="produto-lista col-lg-9 col-md-9 col-10 pl-5">
+      <!--PAGINACAO-->
+      <nav aria-label="pages">
+        <ul class="pagination">
+          {% if page_obj.has_previous %}
+          <li class="page-item enabled">
+            <a
+              class="page-link"
+              href="?page={{ page_obj.previous_page_number }}"
+              tabindex="-1"
+              aria-disabled="false"
+              >Anterior</a
+            >
+            {% else %}
+          </li>
+
+          <li class="page-item disabled">
+            <a class="page-link" href="#" tabindex="-1" aria-disabled="false"
+              >Anterior</a
+            >
+          </li>
+          {% endif %} {% comment %}
+          <li class="page-item" aria-current="page">
+            <a
+              class="page-link"
+              href="?page={{ page_obj.previous_page_number }}"
+              >{{ page_obj.previous_page_number }}</a
+            >
+          </li>
+          {% endcomment %}
+          <li class="page-item active">
+            <a class="page-link" href="?page={{ page_obj.number }}"
+              >{{ page_obj.number }}</a
+            >
+          </li>
+          {% comment %}
+          <li class="page-item">
+            <a class="page-link" href="?page={{ page_obj.next_page_number }}"
+              >{{ page_obj.next_page_number }}</a
+            >
+          </li>
+          {% endcomment %} {% if page_obj.has_next %}
+          <li class="page-item enabled">
+            <a class="page-link" href="?page={{ page_obj.next_page_number }}"
+              >Próximo</a
+            >
+          </li>
+          {% else %}
+          <li class="page-item disabled">
+            <a class="page-link" href="?page={{ page_obj.next_page_number }}"
+              >Próximo</a
+            >
+          </li>
+          {% endif %}
+        </ul>
+      </nav>
+      <!--//PAGINACAO-->
+      <!--PRODUTO-CARD-->
+      <div class="produto-card-content">
+        {% for p in object_list %}
+        <div class="produto-card block">
+          <div class="item-produto">
+            <a href="#">
+              <img
+                src="../../static/img/phone_ico2.jpg"
+                class="img-fluid"
+                alt="Imagem"
+              />
+              {% comment %}
+              <img
+                src="{{ p.image.thumb.url }}"
+                class="img-fluid"
+                alt="Imagem"
+              />
+              {% endcomment %}
+            </a>
+          </div>
+          <div class="item-produto">
+            <div class="atributo">
+              <div class="descricao">
+                <p>
+                  <span class="nome">{{ p.identification_name }}</span><br />
+                </p>
+                <!--<p>{{ p.memory_internal }}</p>-->
+                <div class="grafico-content">
+                  <div class="bar-content">
+                    <div class="item-nome">
+                      <span>Tela {{ p.display_score }}</span>
+                      <p>{{ p.display_type }}</p>
+                    </div>
+                    <div class="item-grafico">
+                      <div
+                        class="progress-bar"
+                        style="width: {{ p.display_score }}"
+                        aria-valuenow="60"
+                        aria-valuemin="0"
+                        aria-valuemax="60"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="bar-content">
+                    <div class="item-nome">
+                      <span>Bateria {{ p.battery_score }}</span>
+                      <p>{{ p.battery_type }}</p>
+                    </div>
+                    <div class="item-grafico">
+                      <div
+                        class="progress-bar"
+                        style="width: {{ p.battery_score }}"
+                        aria-valuenow="60"
+                        aria-valuemin="0"
+                        aria-valuemax="60"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="bar-content">
+                    <div class="item-nome">
+                      <span>Câmera {{ p.camera_score }}</span>
+                      <p>{{ p.main_camera_features }}</p>
+                    </div>
+                    <div class="item-grafico">
+                      <div
+                        class="progress-bar"
+                        style="width: {{ p.camera_score }}"
+                        aria-valuenow="60"
+                        aria-valuemin="0"
+                        aria-valuemax="60"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="bar-content">
+                    <div class="item-nome">
+                      <span>Performance {{ p.performance_score }}</span>
+                      <p>{{ p.platform_chipset }}</p>
+                    </div>
+                    <div class="item-grafico">
+                      <div
+                        class="progress-bar"
+                        style="width: {{ p.performance_score }}"
+                        aria-valuenow="60"
+                        aria-valuemin="0"
+                        aria-valuemax="60"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="bar-content">
+                    <div class="nota-nome">
+                      <span>Nota Clientes {{ p.client_score }}</span>
+                      <p></p>
+                    </div>
+                    <div class="nota-grafico">
+                      <div
+                        class="progress-bar"
+                        style="width: {{ p.client_score }}"
+                        aria-valuenow="60"
+                        aria-valuemin="0"
+                        aria-valuemax="60"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="bar-content">
+                    <div class="nota-nome">
+                      <span>Nota Especialistas {{ p.expert_score }}</span>
+                      <p></p>
+                    </div>
+                    <div class="nota-grafico">
+                      <div
+                        class="progress-bar"
+                        style="width: {{ p.expert_score }}"
+                        aria-valuenow="60"
+                        aria-valuemin="0"
+                        aria-valuemax="60"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {% comment %}
+              <div class="avaliacao-content">
+                <div class="avaliacao">
+                  <div class="item-avaliacao">
+                    <img
+                      src="{% static 'img/5-star.svg' %}"
+                      class="img-fluid"
+                    />
+                    <p>Consumidores</p>
+                  </div>
+                  <div class="item-avaliacao">
+                    <img
+                      src="{% static 'img/5-star.svg' %}"
+                      class="img-fluid"
+                    />
+                    <p>Especialistas</p>
+                  </div>
+                </div>
+              </div>
+              {% endcomment %}
+            </div>
+          </div>
+          <div class="item-produto">
+            <div class="score-content">
+              <div class="score">
+                <div class="nome">
+                  {% comment %}
+                  <p>vaibo score</p>
+                  {% endcomment %}
+                </div>
+                <div class="nota">
+                  <span>{{ p.vaibo_score }}</span>
+                  <p>vaibo score</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      <!--//PRODUTO-CARD-->
+      <!--PAGINACAO-->
+      <nav aria-label="pages">
+        <ul class="pagination">
+          {% if page_obj.has_previous %}
+          <li class="page-item enabled">
+            <a
+              class="page-link"
+              href="?page={{ page_obj.previous_page_number }}"
+              tabindex="-1"
+              aria-disabled="false"
+              >Anterior</a
+            >
+            {% else %}
+          </li>
+          <li class="page-item disabled">
+            <a class="page-link" href="#" tabindex="-1" aria-disabled="false"
+              >Anterior</a
+            >
+          </li>
+          {% endif %} {% comment %}
+          <li class="page-item" aria-current="page">
+            <a
+              class="page-link"
+              href="?page={{ page_obj.previous_page_number }}"
+              >{{ page_obj.previous_page_number }}</a
+            >
+          </li>
+          {% endcomment %}
+          <li class="page-item active">
+            <a class="page-link" href="?page={{ page_obj.number }}"
+              >{{ page_obj.number }}</a
+            >
+            {% comment %}
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="?page={{ page_obj.next_page_number }}"
+              >{{ page_obj.next_page_number }}</a
+            >
+          </li>
+          {% endcomment %} {% if page_obj.has_next %}
+          <li class="page-item enabled">
+            <a class="page-link" href="?page={{ page_obj.next_page_number }}"
+              >Próximo</a
+            >
+          </li>
+          {% else %}
+          <li class="page-item disabled">
+            <a class="page-link" href="?page={{ page_obj.next_page_number }}"
+              >Próximo</a
+            >
+          </li>
+          {% endif %}
+        </ul>
+      </nav>
+      <!--//PAGINACAO-->
+    </div>
+  </div>
+</div>
+{% endblock %}
