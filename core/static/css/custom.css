@@ -348,8 +348,133 @@ html {
 
 /* DESCRIÇÃO */
 
+/* .area-descricao {
+} */
+
 .area-caracteristicas {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  flex-shrink: 1;
+  justify-content: space-around;
+}
+
+.area-caracteristicas img {
+  display: flex;
+  flex: 1 1 250px;
+  max-width: 500px;
+}
+
+.area-dados {
+  display: flex;
+  padding: 10px;
+  border-radius: 15px;
+}
+
+.area-dados .name {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5px;
+}
+
+.area-dados .info {
+  display: flex;
+  align-items: center;
+}
+
+.area-dados .progress-bar {
+  font-size: 14px;
+  font-weight: 500;
+  text-align: initial;
+  background: var(--secondary);
+  text-transform: uppercase;
+  height: 16px;
+  border-radius: 8px;
+  margin-bottom: 5px;
+  /* border: 1px solid var(--primary-dark); */
+}
+
+.area-dados .progress-bar p {
+  align-items: stretch;
+  color: whitesmoke;
+  font-size: 13px;
+  font-weight: 500;
+  /* margin-left: 15px; */
+  padding: auto;
+  margin-top: 2px;
+}
+
+.area-dados .bar-container {
+  background-color: var(--medium);
+  /* border: 2px solid var(--medium); */
+  height: 16px;
+  border-radius: 8px;
+  margin-left: 1px;
+  margin-bottom: 5px;
+}
+
+.area-dados .cam-container {
   display: flex;
 }
 
+.area-dados .cam-container .cam-item {
+  flex-grow: 1;
+}
+
+.area-dados .item {
+  display: flex;
+  flex-direction: column;
+}
+
+.area-dados .features {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2px;
+  margin: 0 10px 2px 10px;
+}
+
+.area-dados p {
+  color: var(--primary);
+  font-size: 12px;
+  margin-left: 5px;
+  margin-bottom: 0;
+}
+
+.area-dados i {
+  color: var(--primary);
+  font-size: 22px;
+  margin-left: 0;
+  flex: 0 1 15px;
+}
 /* END OF DESCRIÇÃO */
+
+/* TESTE */
+.item1 {
+  grid-area: area1;
+}
+
+.item4 {
+  height: 50px;
+}
+
+.item5 {
+  grid-area: area5;
+}
+
+.grid-container {
+  display: flex;
+  justify-content: space-around;
+  /* grid-template-areas:
+    "area1 . ."
+    "area1 area4 area5"
+    "area1 . area5"
+    ". . area5"; */
+  /* grid-gap: 2px; */
+}
+
+.grid-container > div {
+  background-color: var(--medium);
+  text-align: center;
+  padding: 40px;
+}
+
+/* END OF TESTE */
