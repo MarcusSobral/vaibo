@@ -15,14 +15,18 @@ class IndexView(TemplateView):
         return context
 
 
+class ProdutosIndexView(TemplateView):
+    template_name = 'produtos/index.html'
+
+
 class ProdutosList(ListView):
     model = Produtos
-    template_name = "produto-card2.html"
+    template_name = "produtos/produto-card2.html"
     paginate_by = 30
 
 
 class ProdutoDescricao(TemplateView):
-    template_name = 'produto-descricao.html'
+    template_name = 'produtos/produto-descricao.html'
 
     # def get_context_data(self, **kwargs):
     #     context = super(IndexView, self).get_context_data(**kwargs)
