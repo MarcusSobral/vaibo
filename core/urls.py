@@ -6,6 +6,6 @@ from .views import IndexView, ProdutosList, ProdutoDescricao, ProdutosIndexView
 urlpatterns = [
     path('', IndexView.as_view(), name='index'),
     path('produtos/index/', ProdutosIndexView.as_view(), name='produtos-index'),
-    path('listar/produtos/', ProdutosList.as_view(), name='listar-produtos'),
-    path('descricao/', ProdutoDescricao.as_view(), name='produto-descricao'),
+    path('produtos/lista/', ProdutosList.as_view(), name='produtos-lista'),
+    path('produtos/descricao/', ProdutoDescricao.as_view(), name='produtos-descricao'),
 ]
