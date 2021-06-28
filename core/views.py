@@ -1,9 +1,12 @@
 from django.views.generic import TemplateView
 from django.views.generic.list import ListView
+from django.views.generic.edit import CreateView
+
+from django.urls import reverse_lazy
 
 # from django.core.paginator import Paginator
 
-from .models import Produtos
+from .models import Produtos, Usuarios
 
 
 class IndexView(TemplateView):
@@ -27,6 +30,17 @@ class ProdutosList(ListView):
 
 class ProdutoDescricao(TemplateView):
     template_name = 'produtos/produto-descricao.html'
+
+
+# Forms
+
+class UsuarioCreate(CreateView):
+    model = Usuarios
+    fields = ['name', 'birthdate', 'email', 'country']
+    template_name = 'cadastros/form.html'
+    success_url = reverse_lazy('index')
+
+
 
     # def get_context_data(self, **kwargs):
     #     context = super(IndexView, self).get_context_data(**kwargs)

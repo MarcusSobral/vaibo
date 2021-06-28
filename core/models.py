@@ -1,6 +1,8 @@
 import uuid
 from django.db import models
 from django.db.models.fields import DateField
+# from django.db.models.aggregates import Max
+# from django.db.models.manager import ManagerDescriptor
 # from django.db.models.fields import CharField
 
 from stdimage.models import StdImageField
@@ -20,6 +22,18 @@ class Base(models.Model):
     class Meta:
         abstract = True
 
+class Usuarios(Base):
+    name = models.CharField('Nome', max_length=255)
+    birthdate = models.DateField('Data de Nascimento')
+    email = models.EmailField('E-mail', max_length=255)
+    country = models.CharField('País', max_length=255)
+
+    class Meta:
+        verbose_name = 'Usuário'
+        verbose_name_plural = 'Usuários'
+
+    def __str__(self):
+        return self.name
 
 class Smartphone(Base):
     name = models.CharField('Nome', max_length=255)
@@ -46,8 +60,6 @@ class Smartphone(Base):
 
     def __str__(self):
         return self.name
-
-
 class Produtos(Base):
     id = models.CharField(primary_key=True, default=uuid.uuid4(), unique=True, max_length=255)
     identification_id = models.CharField('ID', max_length=255)
@@ -131,6 +143,7 @@ class Produtos(Base):
     expert_score = models.CharField('Expert_score', max_length=10, null=True)
     vaibo_score = models.DecimalField('Vaibo Score', decimal_places=1, max_digits=2, null=True)
     rank = models.IntegerField('Ranking', null=True)
+
     class Meta:
         verbose_name = 'Produto'
         verbose_name_plural = 'Produtos'
