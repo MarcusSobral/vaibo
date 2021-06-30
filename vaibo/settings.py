@@ -40,7 +40,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     #
     'core.apps.CoreConfig',
+    'usuarios.apps.UsuariosConfig',
 ]
+
+# Crispy Forms
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -138,3 +142,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Configurações de Autenticação
+
+LOGIN_REDIRECT_URL = 'produtos-lista'
+LOGOUT_REDIRECT_URL = 'login'
+LOGIN_URL = 'login'
