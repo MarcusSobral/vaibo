@@ -10,7 +10,19 @@ html {
 
 #header-wrap .container .navbar-brand {
   flex: 0 10%;
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--primary);
+  text-align: center;
+  align-items: center;
+  /* background-color: var(--primary); */
+  /* border-radius: 50%; */
+  /* padding: 15px; */
 }
+
+/* #header-wrap .container .navbar-brand a {
+  font-size: 50px;
+} */
 
 #header-wrap .container .navbar {
   flex-grow: 1;
@@ -53,7 +65,9 @@ html {
 }
 
 #navbarNav {
-  flex: 0 1 10%;
+  font-size: 30px;
+  flex: 0 1 15%;
+  justify-content: space-around;
 }
 
 /* END OF HEADER */
